@@ -1,7 +1,7 @@
 #!/bin/bash
 echo `date`
 
-cpu_threshold='80'
+cpu_threshold='0'
  
 mem_threshold='80'
  
