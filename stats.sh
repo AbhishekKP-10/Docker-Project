@@ -10,7 +10,7 @@ cpu_usage ()
 {
 cpu_idle=`top -b -n 1 | grep Cpu | awk '{print $8}'|cut -f 1 -d "."`
 cpu_use=`expr 100 - $cpu_idle`
-if [ $cpu_use -gt $cpu_threshold ]
+if [ $cpu_use -lt $cpu_threshold ]
    then
         curl -X POST -H 'Content-type: application/json' --data '{"text":"CpU WaRnInG.."}' https://hooks.slack.com/services/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
         #curl -X POST -H 'Content-type: application/json' --data '{"text":"cPU wArNiNg..."}' https://hooks.slack.com/services/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
